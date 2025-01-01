@@ -4,7 +4,11 @@ let minutesContainer = document.getElementById("minutes");
 let secondsContainer = document.getElementById("seconds");
 
 function updateCountdown() {
-  let newYear = new Date("January 1, 2025 00:00:00");
+  function getNextNewYear() {
+    let currentYear = new Date().getFullYear();
+    return new Date(currentYear + 1, 0, 1);
+  }
+  let newYear = getNextNewYear();
   let currentTime = new Date();
   let difference = newYear - currentTime;
 
