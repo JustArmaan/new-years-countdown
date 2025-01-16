@@ -1,7 +1,7 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
-  background: #282c34;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: #fff;
   margin: 0;
   display: flex;
@@ -9,24 +9,60 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow: hidden;
 }
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .countdown {
   display: flex;
   gap: 20px;
+  margin-top: 10px;
+  animation: fadeIn 1.5s ease-in-out;
 }
+
 .countdown div {
-  background: #444;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
   padding: 20px;
-  border-radius: 8px;
-  width: 80px;
-  height: 80px;
+  border-radius: 12px;
+  width: 100px;
+  height: 100px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: #ffdf91;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, background 0.3s;
 }
+
+.countdown div:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .countdown div span {
   display: block;
-  font-size: 0.7rem;
-  margin-top: 5px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
